@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling AI - Your Personal Fashion Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-magic"></i>
+            <span>Styling AI</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#upload" class="nav-link">Try It</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Your Personal AI Fashion Stylist</h1>
+        <p class="hero-subtitle">Upload your photo and get personalized styling recommendations</p>
+        <a href="#upload" class="cta-button">Get Started</a>
+    </div>
+    <div class="hero-animation">
+        <div class="floating-box"></div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <h2>Why Choose Styling AI?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-camera"></i>
+            <h3>Instant Analysis</h3>
+            <p>Upload a photo and get AI-powered styling recommendations in seconds</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-palette"></i>
+            <h3>Color Matching</h3>
+            <p>Get recommendations perfectly matched to your skin tone and complexion</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-palette"></i>
+            <h3>Product Links</h3>
+            <p>Direct shopping links to purchase recommended items from top brands</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-palette"></i>
+            <h3>Professional Tips</h3>
+            <p>Learn Hair Style, accessories and styling tips from fashion experts.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Upload Section -->
+
+<section id="upload" class="upload-section">
+    <div class="upload-container">
+        <h2>Let's Style You</h2>
+
+        <div class="upload-wrapper">
+
+            <div class="upload-form">
+
+                <div class="gender-selector">
+                    <label>I am:</label>
+                    <div class="gender-options">
+
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Male" checked>
+                            <span class="radio-custom"></span>
+                            <i class="fas fa-mars"></i> Male
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Female">
+                            <span class="radio-custom"></span>
+                            <i class="fas fa-venus"></i> Female
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Your Photo</h3>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <button id="browseBtn">Browse File</button>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <img id="previewImage" src="" alt="Preview">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Analyzing your style...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+     <!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+    <h2 class="how-title">How Styling AI Works</h2>
+
+    <div class="how-grid">
+
+        <div class="how-card">
+            <div class="step">1</div>
+            <h3>Upload Your Photo</h3>
+            <p>Share a clear photo of yourself for analysis</p>
+        </div>
+
+        <div class="how-card">
+            <div class="step">2</div>
+            <h3>AI Analysis</h3>
+            <p>Our AI detects your skin tone and analyzes your features</p>
+        </div>
+
+        <div class="how-card">
+            <div class="step">3</div>
+            <h3>Get Recommendations</h3>
+            <p>Receive personalized styling advice tailored to you</p>
+        </div>
+
+        <div class="how-card">
+            <div class="step">4</div>
+            <h3>Shop & Style</h3>
+            <p>Access direct links to purchase recommended items</p>
+        </div>
+
+    </div>
+</section>
+</section>
+
+<!-- Results Section -->
+<section id="results" class="results-section" style="display: none;">
+    <div class="results-container">
+        <div class="results-header">
+            <h2>Your Personalized Style Profile</h2>
+            <button id="resetBtn" class="reset-btn">
+                <i class="fas fa-redo"></i> Try Again
+            </button>
+        </div>
+
+        <div class="skin-tone-card">
+            <div class="tone-circle" id="toneCircle"></div>
+            <div class="tone-info"></div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="about-content">
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Styling AI. Powered by Advanced AI Technology. All rights reserved.</p>
+</footer>
+
+<!-- Toasts -->
+<div id="errorToast" class="toast error-toast"></div>
+<div id="successToast" class="toast success-toast"></div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>
